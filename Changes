@@ -1,4 +1,13 @@
 ____________________________________________________________________________
+[ 10936] By: autrijus                              on 2004/06/22  14:43:01
+        Log: * This be 0.06.
+             * Minor POD typo fixes.
+             * Call Time::HiRes::time() directly instead of importing
+	       it.
+             * Correctly detect remote address under CGIHandler
+             and Apache2Handler.
+	   ! lib/MasonX/Profiler.pm
+____________________________________________________________________________
 [ 10888] By: autrijus                              on 2004/06/17  00:16:20
         Log: * This be 0.05.
              * Documentation cleanups; fix copyright years.
