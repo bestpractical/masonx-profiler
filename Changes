@@ -1,0 +1,6 @@
+____________________________________________________________________________
+[  8431] By: autrijus                              on 2003/10/16  11:21:57
+        Log: * This be MasonX::Profiler 0.01, initial release.
+	   + MANIFEST Makefile.PL README
+	   + lib/MasonX/Profiler.pm t/0-signature.t
+	   + t/1-basic.t
