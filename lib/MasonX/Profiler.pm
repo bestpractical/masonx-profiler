@@ -1,8 +1,8 @@
 # $File: //member/autrijus/MasonX-Profiler/lib/MasonX/Profiler.pm $ $Author: autrijus $
-# $Revision: #6 $ $Change: 10396 $ $DateTime: 2004/03/16 10:55:14 $
+# $Revision: #7 $ $Change: 10428 $ $DateTime: 2004/03/18 08:17:20 $
 
 package MasonX::Profiler;
-$MasonX::Profiler::VERSION = '0.03';
+$MasonX::Profiler::VERSION = '0.04';
 
 use strict;
 use Time::HiRes qw( time );
@@ -13,8 +13,8 @@ MasonX::Profiler - Mason per-component profiler
 
 =head1 VERSION
 
-This document describes version 0.03 of MasonX::Profiler, released
-March 16, 2003.
+This document describes version 0.04 of MasonX::Profiler, released
+March 18, 2003.
 
 =head1 SYNOPSIS
 
@@ -39,12 +39,12 @@ inside the <VirtualHost> block, not outside it.
 This module prints per-component profiling information to STDERR (usually
 directed to the Apache error log).  Its output looks like this:
 
-    =Mason= 127.0.0.1 - /NoAuth/webrt.css BEGINS
-    =Mason= 127.0.0.1 -     /NoAuth/webrt.css >>>>
-    =Mason= 127.0.0.1 -         /Elements/Callback >>>>
-    =Mason= 127.0.0.1 -         /Elements/Callback <<<< 0.0008
-    =Mason= 127.0.0.1 -     /NoAuth/webrt.css <<<< 0.0072
-    =Mason= 127.0.0.1 - /NoAuth/webrt.css ENDS
+    =Mason= 127.0.0.1 - /NoAuth/webrt.css BEGINS {{{
+    =Mason= 127.0.0.1 -     /NoAuth/webrt.css {{{
+    =Mason= 127.0.0.1 -         /Elements/Callback {{{
+    =Mason= 127.0.0.1 -         /Elements/Callback }}} 0.0008
+    =Mason= 127.0.0.1 -     /NoAuth/webrt.css }}} 0.0072
+    =Mason= 127.0.0.1 - /NoAuth/webrt.css }}} ENDS
 
 Each row contains five whitespace-separated fields: C<=Mason=>, remote IP
 address, C<->, indented component name, and the time spent processing that
@@ -76,12 +76,12 @@ sub new {
 
     return if $self->{tag} eq '/l';
 
-    print STDERR "=Mason= $self->{ip} - $self->{uri} BEGINS\n"
+    print STDERR "=Mason= $self->{ip} - $self->{uri} BEGINS {{{\n"
 	unless $Depth{$self->{ip}}{$self->{uri}}++;
 
     my $indent = ' ' x (4 * $Depth{$self->{ip}}{$self->{uri}});
     printf STDERR "=Mason= $self->{ip} - $indent".
-		  "$self->{tag} >>>>\n";
+		  "$self->{tag} {{{\n";
 
     bless($self, $class);
 }
@@ -91,10 +91,10 @@ sub DESTROY {
     my $indent = ' ' x (4 + 4 * --$Depth{$self->{ip}}{$self->{uri}});
 
     printf STDERR "=Mason= $self->{ip} - $indent".
-		  "$self->{tag} <<<< %.4f\n", (time - $self->{start});
+		  "$self->{tag} }}} %.4f\n", (time - $self->{start});
 
     return if $Depth{$self->{ip}}{$self->{uri}};
-    print STDERR "=Mason= $self->{ip} - $self->{uri} ENDS\n";
+    print STDERR "=Mason= $self->{ip} - $self->{uri} }}} ENDS\n";
 }
 
 1;

@@ -1,4 +1,10 @@
 ____________________________________________________________________________
+[ 10428] By: autrijus                              on 2004/03/18  08:17:20
+        Log: * This be 0.04.
+             * Use Vim folding markers instead of <<< and >>> to mark
+             entry and leaving of components.  Contributed by LCamel. 
+	   ! MANIFEST lib/MasonX/Profiler.pm
+____________________________________________________________________________
 [ 10396] By: autrijus                              on 2004/03/16  10:55:14
         Log: * This be 0.03.
              * update to newer M::I and signature dists.
