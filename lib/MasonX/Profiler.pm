@@ -1,8 +1,8 @@
 # $File: //member/autrijus/MasonX-Profiler/lib/MasonX/Profiler.pm $ $Author: autrijus $
-# $Revision: #5 $ $Change: 8452 $ $DateTime: 2003/10/17 10:52:28 $
+# $Revision: #6 $ $Change: 10396 $ $DateTime: 2004/03/16 10:55:14 $
 
 package MasonX::Profiler;
-$MasonX::Profiler::VERSION = '0.02';
+$MasonX::Profiler::VERSION = '0.03';
 
 use strict;
 use Time::HiRes qw( time );
@@ -13,8 +13,8 @@ MasonX::Profiler - Mason per-component profiler
 
 =head1 VERSION
 
-This document describes version 0.02 of MasonX::Profiler, released
-October 17, 2003.
+This document describes version 0.03 of MasonX::Profiler, released
+March 16, 2003.
 
 =head1 SYNOPSIS
 
@@ -31,24 +31,20 @@ Alternatively, in F<httpd.conf> with L<HTML::Mason::ApacheHandler>:
     PerlModule MasonX::Profiler
     PerlSetVar MasonPreamble "my $p = MasonX::Profiler->new($m, $r);"
 
+Note that if you are using virtual hosts, the two lines above must be
+inside the <VirtualHost> block, not outside it.
+
 =head1 DESCRIPTION
 
 This module prints per-component profiling information to STDERR (usually
 directed to the Apache error log).  Its output looks like this:
 
-    =Mason= 210.85.16.204 - /Foundry/Home/MyRequests.html BEGINS
-    =Mason= 210.85.16.204 -     /Elements/SetupSessionCookie 0.0610
-    =Mason= 210.85.16.204 -         /Callbacks/Foundry/autohandler/Auth 0.0003
-    =Mason= 210.85.16.204 -     /Elements/Callback 0.0242
-    =Mason= 210.85.16.204 -     /Elements/Callback 0.0016
-    =Mason= 210.85.16.204 -                 /Foundry/Elements/Top 0.0604
-    =Mason= 210.85.16.204 -                 /Foundry/Elements/Tab 0.0194
-    =Mason= 210.85.16.204 -             /Foundry/Elements/Header 0.1375
-    =Mason= 210.85.16.204 -             /Foundry/Elements/Tabs 0.0037
-    =Mason= 210.85.16.204 -         /Elements/Callback 0.0294
-    =Mason= 210.85.16.204 -     /Elements/Footer 0.0308
-    =Mason= 210.85.16.204 - /autohandler 2.9179
-    =Mason= 210.85.16.204 - /Foundry/Home/MyRequests.html ENDS
+    =Mason= 127.0.0.1 - /NoAuth/webrt.css BEGINS
+    =Mason= 127.0.0.1 -     /NoAuth/webrt.css >>>>
+    =Mason= 127.0.0.1 -         /Elements/Callback >>>>
+    =Mason= 127.0.0.1 -         /Elements/Callback <<<< 0.0008
+    =Mason= 127.0.0.1 -     /NoAuth/webrt.css <<<< 0.0072
+    =Mason= 127.0.0.1 - /NoAuth/webrt.css ENDS
 
 Each row contains five whitespace-separated fields: C<=Mason=>, remote IP
 address, C<->, indented component name, and the time spent processing that
@@ -83,17 +79,21 @@ sub new {
     print STDERR "=Mason= $self->{ip} - $self->{uri} BEGINS\n"
 	unless $Depth{$self->{ip}}{$self->{uri}}++;
 
+    my $indent = ' ' x (4 * $Depth{$self->{ip}}{$self->{uri}});
+    printf STDERR "=Mason= $self->{ip} - $indent".
+		  "$self->{tag} >>>>\n";
+
     bless($self, $class);
 }
 
 sub DESTROY {
     my $self = shift;
-    my $indent = ' ' x (4 * --$Depth{$self->{ip}}{$self->{uri}});
+    my $indent = ' ' x (4 + 4 * --$Depth{$self->{ip}}{$self->{uri}});
 
-    printf STDERR "=Mason= $self->{ip} - $indent" .
-		  "$self->{tag} %.4f\n", (time - $self->{start});
+    printf STDERR "=Mason= $self->{ip} - $indent".
+		  "$self->{tag} <<<< %.4f\n", (time - $self->{start});
 
-    return if $indent;
+    return if $Depth{$self->{ip}}{$self->{uri}};
     print STDERR "=Mason= $self->{ip} - $self->{uri} ENDS\n";
 }
 
@@ -105,7 +105,7 @@ Autrijus Tang E<lt>autrijus@autrijus.orgE<gt>
 
 =head1 COPYRIGHT
 
-Copyright 2002, 2003 by Autrijus Tang E<lt>autrijus@autrijus.orgE<gt>.
+Copyright 2002, 2003, 2004 by Autrijus Tang E<lt>autrijus@autrijus.orgE<gt>.
 
 This program is free software; you can redistribute it and/or 
 modify it under the same terms as Perl itself.

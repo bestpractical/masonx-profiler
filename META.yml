@@ -1,13 +1,13 @@
 name: MasonX-Profiler
-module_name: MasonX::Profiler
-version: 0.02
+version: 0.03
 abstract: Mason per-component profiler
-author: Autrijus Tang (autrijus@autrijus.org)
+author: Autrijus Tang <autrijus@autrijus.org>
+license: perl
 distribution_type: module
 requires:
   HTML::Mason: 0
   Time::HiRes: 0
-private:
+no_index:
   directory:
     - inc
-generated_by: Module::Install version 0.24
+generated_by: Module::Install version 0.32

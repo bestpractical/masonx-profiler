@@ -1,4 +1,12 @@
 ____________________________________________________________________________
+[ 10396] By: autrijus                              on 2004/03/16  10:55:14
+        Log: * This be 0.03.
+             * update to newer M::I and signature dists.
+             * now implements ">>>>"-marked entrance logs, implemented
+             by jihuang and lcamel.
+	   ! Makefile.PL lib/MasonX/Profiler.pm
+	   ! t/0-signature.t
+____________________________________________________________________________
 [  8452] By: autrijus                              on 2003/10/17  10:52:28
         Log: * This be 0.02.
              * fix a trivial typo.

@@ -1,5 +1,5 @@
 This file contains message digests of all files listed in MANIFEST,
-signed via the Module::Signature module, version 0.35.
+signed via the Module::Signature module, version 0.38.
 
 To verify the content in this distribution, first make sure you have
 Module::Signature installed, then type:
@@ -14,23 +14,26 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 75fd5d41d3957cb415cf6af02e8096be31e7c0f8 Changes
-SHA1 2e0e9e37965dd7d082856aba4946a08253bf69ba MANIFEST
-SHA1 02cde43980d10fa58ec3fbca90ffe0797eeefedf META.yml
-SHA1 d0a05aa53bd44bf6a8e60ff8fc7a9e0103fa5a6f Makefile.PL
+SHA1 406480c8038e127cbbd1f9b8952fa81f6264f834 Changes
+SHA1 54199f510aab07b15dcc6742309d0a8a1d15fea1 MANIFEST
+SHA1 a2555f4eaf78d9e2d47d27a55b6cfd6bc9dfaf14 META.yml
+SHA1 f807185f57fc1f0eef1fb7a780fa8070d357f594 Makefile.PL
 SHA1 d92d89d20b16e4523fd7f790e58b03d51ac1cd3a README
-SHA1 20260be7cfe0fbb394c4f8ff3a80cacfcb82dd73 inc/Module/Install.pm
-SHA1 019bccc5b2e364447c6e6e150d049ca2a216598e inc/Module/Install/Base.pm
-SHA1 e2547371d0317abbfa3d56b0d20bba909885d7db inc/Module/Install/MakeMaker.pm
-SHA1 8f9804460ecdeaeaa79d3ff18f27551cab7371ea inc/Module/Install/Makefile.pm
-SHA1 1afe7210c78328ecc24ee57c6f6aeb2a7b981c0e inc/Module/Install/Metadata.pm
-SHA1 1674ef5b7dd5256d7a501dea64453bce80a5dd99 lib/MasonX/Profiler.pm
-SHA1 390da9ea2894cd70f0f7cb5489075566118cf36d t/0-signature.t
+SHA1 8ce7e929153133eb824fa71678a28952dc251848 inc/Module/Install.pm
+SHA1 b9972b7e2eb9e0f26e6aa1c450736d04d346cc9b inc/Module/Install/Base.pm
+SHA1 79919a7a54f4548dac20075e8dc8869fc41e0ce1 inc/Module/Install/Can.pm
+SHA1 9dd540f8e37b483f2ff7b59edd77425a83221b1c inc/Module/Install/Fetch.pm
+SHA1 eff0614c9c10b5965b1c8c6f81ba4b222a30bb13 inc/Module/Install/Makefile.pm
+SHA1 96622a9c708604cf36d5f44b6fbff26b050e4c9d inc/Module/Install/Metadata.pm
+SHA1 f08018c1a76a07671910d05f06885aaa807ffce1 inc/Module/Install/Win32.pm
+SHA1 ab45068dc0f749d438705201e38d7901df0c824b inc/Module/Install/WriteAll.pm
+SHA1 1e7e02c3e96494ffd8b7762b8edd9819bc800672 lib/MasonX/Profiler.pm
+SHA1 033300efbe0805de6e633458f9940601c5970564 t/0-signature.t
 SHA1 325569eebed2092e7596f87782413fc17e5c07ae t/1-basic.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.2.3 (FreeBSD)
 
-iD8DBQE/j8r6tLPdNzw1AaARAgK7AJ0XjRw6kKqWPZYjXwmVJhF7/zRKvACffdr1
-tOsGX7b9Uy45GwmEhVxosfA=
-=prM9
+iD8DBQFAVt12tLPdNzw1AaARAurrAKCUYPMes3/YusQOUkyUChjSgFGZpACdHbIi
+ScZ4IFSlLyXXk9lpBHATP3w=
+=hp9W
 -----END PGP SIGNATURE-----
