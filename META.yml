@@ -1,5 +1,5 @@
 name: MasonX-Profiler
-version: 0.04
+version: 0.05
 abstract: Mason per-component profiler
 author: Autrijus Tang <autrijus@autrijus.org>
 license: perl
@@ -10,4 +10,4 @@ requires:
 no_index:
   directory:
     - inc
-generated_by: Module::Install version 0.32
+generated_by: Module::Install version 0.33

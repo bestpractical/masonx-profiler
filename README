@@ -1,5 +1,5 @@
 # $File: //member/autrijus/MasonX-Profiler/README $ $Author: autrijus $
-# $Revision: #1 $ $Change: 8431 $ $DateTime: 2003/10/16 11:21:57 $
+# $Revision: #2 $ $Change: 10888 $ $DateTime: 2004/06/17 00:16:20 $
 
 This is the README file for MasonX::Profiler, a per-component profiler
 extension for HTML::Mason.
@@ -11,7 +11,7 @@ the module usage information.
 
 MasonX::Profiler uses the standard perl module install process:
 
-cpansign -v		# see SIGNATURE for details
+cpansign -v		# optional; see SIGNATURE for details
 perl Makefile.PL
 make			# or 'nmake' on Win32
 make test
@@ -19,7 +19,7 @@ make install
 
 * Copyright
 
-Copyright 2003 by Autrijus Tang <autrijus@autrijus.org>.
+Copyright 2002, 2003, 2004 by Autrijus Tang <autrijus@autrijus.org>.
 
 All rights reserved.  You can redistribute and/or modify
 this bundle under the same terms as Perl itself.

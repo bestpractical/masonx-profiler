@@ -1,8 +1,8 @@
 # $File: //member/autrijus/MasonX-Profiler/lib/MasonX/Profiler.pm $ $Author: autrijus $
-# $Revision: #7 $ $Change: 10428 $ $DateTime: 2004/03/18 08:17:20 $
+# $Revision: #8 $ $Change: 10888 $ $DateTime: 2004/06/17 00:16:20 $
 
 package MasonX::Profiler;
-$MasonX::Profiler::VERSION = '0.04';
+$MasonX::Profiler::VERSION = '0.05';
 
 use strict;
 use Time::HiRes qw( time );
@@ -13,8 +13,8 @@ MasonX::Profiler - Mason per-component profiler
 
 =head1 VERSION
 
-This document describes version 0.04 of MasonX::Profiler, released
-March 18, 2003.
+This document describes version 0.05 of MasonX::Profiler, released
+June 17, 2004.
 
 =head1 SYNOPSIS
 
@@ -32,12 +32,12 @@ Alternatively, in F<httpd.conf> with L<HTML::Mason::ApacheHandler>:
     PerlSetVar MasonPreamble "my $p = MasonX::Profiler->new($m, $r);"
 
 Note that if you are using virtual hosts, the two lines above must be
-inside the <VirtualHost> block, not outside it.
+inside the C<E<gt>VirtualHostE<lt>> block, not outside it.
 
 =head1 DESCRIPTION
 
-This module prints per-component profiling information to STDERR (usually
-directed to the Apache error log).  Its output looks like this:
+This module prints per-component profiling information to C<STDERR>
+(usually directed to the Apache error log).  Its output looks like this:
 
     =Mason= 127.0.0.1 - /NoAuth/webrt.css BEGINS {{{
     =Mason= 127.0.0.1 -     /NoAuth/webrt.css {{{
@@ -47,9 +47,11 @@ directed to the Apache error log).  Its output looks like this:
     =Mason= 127.0.0.1 - /NoAuth/webrt.css }}} ENDS
 
 Each row contains five whitespace-separated fields: C<=Mason=>, remote IP
-address, C<->, indented component name, and the time spent processing that
-component (inclusive).  The beginning and end of the initial request is
-represented by the special time fields C<BEGINS> and C<ENDS>.
+address, C<->, indented component name, and how name seconds did it take to
+process that component (including all subcomponents it called).
+
+The beginning and end of the initial request is represented by the special
+time fields C<BEGINS> and C<ENDS>.
 
 =cut
 

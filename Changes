@@ -1,4 +1,11 @@
 ____________________________________________________________________________
+[ 10888] By: autrijus                              on 2004/06/17  00:16:20
+        Log: * This be 0.05.
+             * Documentation cleanups; fix copyright years.
+             * Emcee Lam suggested to mention that the time unit
+             is measured in seconds.
+	   ! README lib/MasonX/Profiler.pm
+____________________________________________________________________________
 [ 10428] By: autrijus                              on 2004/03/18  08:17:20
         Log: * This be 0.04.
              * Use Vim folding markers instead of <<< and >>> to mark
