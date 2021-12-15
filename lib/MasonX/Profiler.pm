@@ -1,6 +1,3 @@
-# $File: //member/autrijus/MasonX-Profiler/lib/MasonX/Profiler.pm $ $Author: autrijus $
-# $Revision: #9 $ $Change: 10936 $ $DateTime: 2004/06/22 14:43:01 $
-
 package MasonX::Profiler;
 $MasonX::Profiler::VERSION = '0.06';
 
@@ -110,6 +107,7 @@ sub DESTROY {
 
 =head1 AUTHORS
 
+Best Practical Solutions, LLC <modules@bestpractical.com>
 Autrijus Tang E<lt>autrijus@autrijus.orgE<gt>
 
 =head1 COPYRIGHT

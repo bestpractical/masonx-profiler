@@ -1,6 +1,4 @@
 #!/usr/bin/perl
-# $File: //member/autrijus/MasonX-Profiler/t/0-signature.t $ $Author: autrijus $
-# $Revision: #2 $ $Change: 10396 $ $DateTime: 2004/03/16 10:55:14 $
 
 use strict;
 print "1..1\n";
