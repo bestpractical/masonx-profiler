@@ -1,5 +1,5 @@
 package MasonX::Profiler;
-$MasonX::Profiler::VERSION = '0.06';
+$MasonX::Profiler::VERSION = '0.07';
 
 use strict;
 use Time::HiRes ();
@@ -108,6 +108,7 @@ sub DESTROY {
 =head1 AUTHORS
 
 Best Practical Solutions, LLC <modules@bestpractical.com>
+
 Autrijus Tang E<lt>autrijus@autrijus.orgE<gt>
 
 =head1 COPYRIGHT

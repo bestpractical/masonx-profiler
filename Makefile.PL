@@ -3,7 +3,7 @@
 use inc::Module::Install;
 
 name		('MasonX-Profiler');
-author		('Autrijus Tang <autrijus@autrijus.org>');
+author_from	('lib/MasonX/Profiler.pm');
 abstract_from	('lib/MasonX/Profiler.pm');
 version_from	('lib/MasonX/Profiler.pm');
 requires	('HTML::Mason', 0);

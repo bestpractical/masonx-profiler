@@ -1,7 +1,7 @@
 ---
 abstract: 'Mason per-component profiler'
 author:
-  - 'Autrijus Tang <autrijus@autrijus.org>'
+  - 'Best Practical Solutions, LLC <modules@bestpractical.com>'
 build_requires:
   ExtUtils::MakeMaker: 6.36
 configure_requires:
@@ -23,4 +23,4 @@ requires:
   Time::HiRes: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: '0.06'
+version: '0.07'
