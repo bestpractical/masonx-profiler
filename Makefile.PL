@@ -1,13 +1,12 @@
-#!/usr/bin/env perl
-
+BEGIN { push @INC, '.' }
 use inc::Module::Install;
 
-name		('MasonX-Profiler');
-author_from	('lib/MasonX/Profiler.pm');
-abstract_from	('lib/MasonX/Profiler.pm');
-version_from	('lib/MasonX/Profiler.pm');
-requires	('HTML::Mason', 0);
-requires	('Time::HiRes', 0);
-license		('perl');
+name ('MasonX-Profiler');
+all_from ('lib/MasonX/Profiler.pm');
+readme_from ('lib/MasonX/Profiler.pm');
+requires ('HTML::Mason', 0);
+requires ('Time::HiRes', 0);
+license ('perl');
 
-WriteAll( sign => 1 );
+sign;
+WriteAll();
