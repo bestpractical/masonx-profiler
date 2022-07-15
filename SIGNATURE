@@ -29,16 +29,16 @@ SHA1 8d19f4485276b987b7838d4ec01909f8055a4724 inc/Module/Install/ReadmeFromPod.p
 SHA1 99b8179fbd9e05422b161cf91abe198744188064 inc/Module/Install/Win32.pm
 SHA1 6a91e14bbecc64e9c8e2261dfa4b360641d152e4 inc/Module/Install/WriteAll.pm
 SHA1 bb80e1536f95ab691ba05ace76e92288be17283b lib/MasonX/Profiler.pm
-SHA1 7f2e13f5f6a798d52ea897d24d07b49af4039341 t/0-signature.t
+SHA1 b6e454c55fb842090f4898c5fb1ffdbee231fabc t/0-signature.t
 SHA1 5c83a3c78f6cd8b5af799a976bf5e8dc13315ecd t/1-basic.t
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEEFelFwSnB+u9xCpouFedxUadmpRQFAmLRtMkACgkQFedxUadm
-pRTjjgf/R7LXoe7LArCOCdGz9kUIZ8LbV1hFE/fdfh9NlhNeijXYbchDtz++eIVg
-n8ZltIOGrn9OvBUnRDLBOrHNSlYr3Vg+A+ucErMVkCMzx2TE5X84agrBGYrm/jTX
-QAeD3vUfOQIa68FofPaoMrHNPLrOwfsDDYtI/P0Arn+akd0ihgQK4sjWDf660CJ6
-Tx8OkcH19ZF8vhYaS2t3/e9bPsh5gw7MAsXx7hw7NyZi1LdblhuyN7OujXRz2EBu
-TVSYLmgQyg1eg951pwwLGNl3xODvpk17jytLeJgRIYTcZhnYdQaVYgTIMlWTge9e
-1AG3kDUh+nBONXUsPFwfCJL7NuZW7Q==
-=Ab0z
+iQEzBAEBCAAdFiEEFelFwSnB+u9xCpouFedxUadmpRQFAmLRuHsACgkQFedxUadm
+pRS/2gf6Amt7HpNQKoeHekJpetpzrmO1/1ZZoHjNe9fN0tfVS7tPf34NvJoz9oW8
+U2LVgEk50fBtCUR6G1oHVajO09lHpK2Km36aNuyObXSu+XEzJVK4FV2ZtBFtbeSM
+7bRTwaXUWnOgvvDyEreu6AkPWp2kvVj32xpO+Gbz5Ptaj1ce8iKvjiTvutdVNAV0
+HT0iWTpMi5EFGap258vpNIbIaui4usatus+VLQuFyLMu4iKacZlV0SQCKixVPrwg
+tRGeghjhCCJoqZk9R9Ooe1gR1sMEUIBHNCmzaMegX4ghKgrMHo4s6r5bOMLJ1qtw
+rgRKcAei0cUdkUvPL8OjMhekJvjKRw==
+=CeTj
 -----END PGP SIGNATURE-----
